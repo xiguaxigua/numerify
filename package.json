@@ -1,6 +1,6 @@
 {
   "name": "numerify",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "numeral-format",
   "main": "lib/index.es.js",
   "scripts": {
