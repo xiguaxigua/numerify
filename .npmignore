@@ -2,3 +2,12 @@ build/
 dist/
 node_modules/
 examples/
+src/
+test/
+_config.yml
+.babelrc
+.eslintignore
+.travis.yml
+karma.config.js
+LICENSE
+test.html
