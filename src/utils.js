@@ -34,16 +34,11 @@ export function numberToFormat (options, value, format, roundingFunction) {
   const abs = Math.abs(value)
   let negP = false
   let optDec = false
-  let leadingCount = 0
   let abbr = ''
   let decimal = ''
   let neg = false
   let abbrForce
-  let int
-  let precision
   let signed
-  let thousands
-  let output
 
   value = value || 0
 
@@ -89,10 +84,10 @@ export function numberToFormat (options, value, format, roundingFunction) {
     format = format.replace('[.]', '.')
   }
   // break number and format
-  int = value.toString().split('.')[0]
-  precision = format.split('.')[1]
-  thousands = format.indexOf(',')
-  leadingCount = (format.split('.')[0].split(',')[0].match(/0/g) || []).length
+  let int = value.toString().split('.')[0]
+  let precision = format.split('.')[1]
+  let thousands = format.indexOf(',')
+  let leadingCount = (format.split('.')[0].split(',')[0].match(/0/g) || []).length
 
   if (precision) {
     if (~precision.indexOf('[')) {
@@ -133,7 +128,7 @@ export function numberToFormat (options, value, format, roundingFunction) {
 
   if (!format.indexOf('.')) int = ''
 
-  output = int + decimal + (abbr || '')
+  let output = int + decimal + (abbr || '')
 
   if (negP) {
     output = (negP && neg ? '(' : '') + output + (negP && neg ? ')' : '')
