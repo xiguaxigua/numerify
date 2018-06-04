@@ -2,7 +2,7 @@
   "name": "numerify",
   "version": "1.0.6",
   "description": "numeral-format",
-  "main": "lib/index.es.js",
+  "main": "lib/index.umd.js",
   "scripts": {
     "dev": "rollup -wc build/watch.js",
     "build": "rm -f -r lib && node build/build.js",
