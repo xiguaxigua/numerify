@@ -69,7 +69,9 @@ export default function numerify (input) {
   return new Numerify(input, value)
 }
 
-numerify.setOptions = function (opts) { Object.assign(options, opts) }
+numerify.setOptions = function (opts) {
+  Object.keys(opts).forEach(key => { options[key] = opts[key] })
+}
 numerify.register = function (name, format) { formats[name] = format }
 numerify.numberToFormat = numberToFormat.bind(null, options)
 numerify.options = options

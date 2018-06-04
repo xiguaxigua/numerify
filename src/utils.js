@@ -107,13 +107,13 @@ export function numberToFormat (options, value, format, roundingFunction) {
     decimal = ~decimal.indexOf('.')
       ? '.' + decimal.split('.')[1]
       : ''
-    if (optDec && Number(decimal.slice(1)) === 0) decimal = ''
+    if (optDec && +(decimal.slice(1)) === 0) decimal = ''
   } else {
     int = toFixed(value, 0, roundingFunction)
   }
   // check abbreviation again after rounding
-  if (abbr && !abbrForce && Number(int) >= 1000 && abbr !== ABBR.trillion) {
-    int = String(Number(int) / 1000)
+  if (abbr && !abbrForce && +int >= 1000 && abbr !== ABBR.trillion) {
+    int = '' + (+int / 1000)
     abbr = ABBR.million
   }
   // format number
