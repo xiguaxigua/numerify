@@ -1,6 +1,6 @@
 {
   "name": "numerify",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "numeral-format",
   "main": "lib/index.umd.js",
   "scripts": {
