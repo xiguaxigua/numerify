@@ -29,7 +29,6 @@
 
         if (numerify.options.scalePercentBy100) value = value * 100
 
-        // check for space before %
         format = format.replace(/\s?%/, '')
 
         output = numerify.numberToFormat(value, format, roundingFunction)
