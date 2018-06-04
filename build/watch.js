@@ -3,9 +3,11 @@ import commonjs from 'rollup-plugin-commonjs'
 import babel from 'rollup-plugin-babel'
 
 export default {
-  entry: 'src/index.js',
+  input: 'src/index.js',
   plugins: [babel(), commonjs(), resolve()],
-  dest: 'dist/index.js',
-  format: 'umd',
-  moduleName: 'UtilsLite'
+  output: {
+    file: 'dist/index.js',
+    format: 'umd',
+    name: 'numerify'
+  }
 }
