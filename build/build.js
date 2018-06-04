@@ -23,7 +23,7 @@ for (let i = 0; i < 2; i++) {
       const type = formatList[j]
       bundle.write({
         format: type,
-        name: 'Numerify',
+        name: 'numerify',
         file: `lib/index.${type}${i ? '.min' : ''}.js`
       }).catch(e => {
         console.log(e)

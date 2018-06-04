@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- stable
+branches:
+  only:
+  - master
+install:
+  - npm i
+script:
+  - npm run build
+  - npm run test

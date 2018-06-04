@@ -15,8 +15,8 @@
       defaultFormat: '0,0',
       scalePercentBy100: true,
       abbrLabel: {
-        th: 'K',
-        mi: 'M',
+        th: 'k',
+        mi: 'm',
         bi: 'B',
         tr: 'T'
       }
@@ -42,11 +42,11 @@
           output = output + space + '%'
         }
 
-        return output + '123'
+        return output
       }
     })
-    console.log(numerify(0).format('0,0%'))
-    console.log(numerify(123123).format('0.000000000000000000ab'))
+    console.log(numerify(0.0111).format('0,0.0[0]%'))
+    console.log(numerify(1213123).format('0,0.00ak'))
     console.log(numerify(123123123100).format('0.0[0]a'))
     console.log(numerify(1231.23).format('0,0.0'))
     console.log(numerify(1231.23).format('0,0.0[0]'))
