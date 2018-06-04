@@ -1,6 +1,5 @@
 ![download](https://img.shields.io/npm/dm/numerify.svg)
 ![version](https://img.shields.io/npm/v/numerify.svg)
-![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/numerify.svg)
 ![language](https://img.shields.io/badge/language-javascript-yellow.svg)
 ![License](https://img.shields.io/badge/license-MIT-000000.svg)
 
