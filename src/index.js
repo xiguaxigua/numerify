@@ -1,17 +1,6 @@
 import { numIsNaN, numberToFormat, extend } from './utils'
+import { DEFAULT_OPTIONS } from './constants'
 
-const DEFAULT_OPTIONS = {
-  zeroFormat: null,
-  nullFormat: null,
-  defaultFormat: '0,0',
-  scalePercentBy100: true,
-  abbrLabel: {
-    th: 'k',
-    mi: 'm',
-    bi: 'b',
-    tr: 't'
-  }
-}
 const options = {}
 const formats = {}
 
