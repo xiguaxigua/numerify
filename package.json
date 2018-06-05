@@ -1,7 +1,7 @@
 {
   "name": "numerify",
   "version": "1.0.10",
-  "description": "numeral-format",
+  "description": "number formatter",
   "main": "lib/index.umd.js",
   "scripts": {
     "dev": "rollup -wc build/watch.js",
@@ -13,13 +13,17 @@
     "type": "git",
     "url": "git+https://github.com/xiguaxigua/numerify.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "js",
+    "number",
+    "formatter"
+  ],
+  "author": "xiguaxigua",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/xiguaxigua/numerify/issues"
   },
-  "homepage": "https://github.com/xiguaxigua/numerify#readme",
+  "homepage": "http://daxigua.me/numerify",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
