@@ -1,17 +1,6 @@
 import { numIsNaN, numberToFormat, extend } from './utils'
+import { DEFAULT_OPTIONS } from './constants'
 
-const DEFAULT_OPTIONS = {
-  zeroFormat: null,
-  nullFormat: null,
-  defaultFormat: '0,0',
-  scalePercentBy100: true,
-  abbrLabel: {
-    th: 'k',
-    mi: 'm',
-    bi: 'b',
-    tr: 't'
-  }
-}
 const options = {}
 const formats = {}
 
@@ -66,12 +55,10 @@ export default function numerify (input, formatType, roundingFunction) {
   return format(value, formatType, roundingFunction)
 }
 
-numerify.setOptions = function (opts) {
-  Object.keys(opts).forEach(key => { options[key] = opts[key] })
-}
-numerify.register = function (name, format) { formats[name] = format }
-numerify.numberToFormat = numberToFormat.bind(null, options)
 numerify.options = options
+numerify.numberToFormat = numberToFormat.bind(null, options)
+numerify.register = function (name, format) { formats[name] = format }
+numerify.setOptions = function (opts) { extend(options, opts) }
 numerify.reset = function () { extend(options, DEFAULT_OPTIONS) }
 
 numerify.register('percentage', {
