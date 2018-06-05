@@ -1,6 +1,6 @@
-import { numIsNaN, numberToFormat } from './utils'
+import { numIsNaN, numberToFormat, extend } from './utils'
 
-let options = {
+const DEFAULT_OPTIONS = {
   zeroFormat: null,
   nullFormat: null,
   defaultFormat: '0,0',
@@ -12,16 +12,13 @@ let options = {
     tr: 't'
   }
 }
+const options = {}
 const formats = {}
 
-function Numerify (input, number) {
-  this._input = input
-  this._value = number
-}
+extend(options, DEFAULT_OPTIONS)
 
-Numerify.prototype.format = function (inputString, roundingFunction) {
-  let value = this._value
-  let format = inputString || options.defaultFormat
+function format (value, formatType, roundingFunction) {
+  let format = formatType || options.defaultFormat
   let output
   let formatFunction
 
@@ -47,7 +44,7 @@ Numerify.prototype.format = function (inputString, roundingFunction) {
   return output
 }
 
-export default function numerify (input) {
+export default function numerify (input, formatType, roundingFunction) {
   let value
 
   if (input === 0 || typeof input === 'undefined') {
@@ -66,7 +63,7 @@ export default function numerify (input) {
     value = +input || null
   }
 
-  return new Numerify(input, value)
+  return format(value, formatType, roundingFunction)
 }
 
 numerify.setOptions = function (opts) {
@@ -75,6 +72,7 @@ numerify.setOptions = function (opts) {
 numerify.register = function (name, format) { formats[name] = format }
 numerify.numberToFormat = numberToFormat.bind(null, options)
 numerify.options = options
+numerify.reset = function () { extend(options, DEFAULT_OPTIONS) }
 
 numerify.register('percentage', {
   regexps: { format: /(%)/ },

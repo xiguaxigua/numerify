@@ -44,13 +44,14 @@
         return output
       }
     })
-    console.log(numerify(0.0111).format('0,0.0[0]%'))
-    console.log(numerify(1213123).format('0,0.00ak'))
-    console.log(numerify(123123123100).format('0.0[0]a'))
-    console.log(numerify(1231.23).format('0,0.0'))
-    console.log(numerify(1231.23).format('0,0.0[0]'))
-    console.log(numerify(1231.2).format('0,0.0[0]'))
-    console.log(numerify(null).format('0,0.0[0]'))
+    numerify.reset()
+    console.log(numerify(0.0111, '0,0.0[0]%'))
+    console.log(numerify(1213123, '0,0.00ak'))
+    console.log(numerify(123123123100, '0.0[0]a'))
+    console.log(numerify(1231.23, '0,0.0'))
+    console.log(numerify(1231.23, '0,0.0[0]'))
+    console.log(numerify(1231.2, '0,0.0[0]'))
+    console.log(numerify(null, '0,0.0[0]'))
   </script>
 </body>
 </html>

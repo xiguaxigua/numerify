@@ -142,3 +142,7 @@ export function numberToFormat (options, value, format, roundingFunction) {
 
   return output
 }
+
+export function extend (target, sub) {
+  Object.keys(sub).forEach(key => { target[key] = sub[key] })
+}

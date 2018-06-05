@@ -5,7 +5,7 @@
 ![language](https://img.shields.io/badge/language-javascript-yellow.svg)
 ![License](https://img.shields.io/badge/license-MIT-000000.svg)
 
-A tool for format number more convient, from a fucking cool project named [Numeral](http://numeraljs.com/) , and smaller than it.
+A tool for format number more convient, from a fucking cool project named [numeral](http://numeraljs.com/) , and smaller than it.
 
 ## Install
 
@@ -18,7 +18,7 @@ A tool for format number more convient, from a fucking cool project named [Numer
 ```js
 import numerify from 'numerify'
 // commonjs package is 'numerify/lib/index.cjs.js'
-console.log(numerify(1234).format('0,0'))
+console.log(numerify(1234, '0,0'))
 ```
 
 ### cdn
@@ -26,7 +26,7 @@ console.log(numerify(1234).format('0,0'))
 ```html
 <script src="https://unpkg.com/numerify/lib/index.umd.min.js"></script>
 <script>
-console.log(numerify(1234).format('0,0'))
+console.log(numerify(1234, '0,0'))
 </script>
 ```
 
@@ -58,12 +58,12 @@ console.log(numerify(1234).format('0,0'))
 
 ## Methods
 
-#### numerify(number).format(formatter, roundFunction)
+#### numerify(number, formatter, roundFunction)
 
 - formatter default is `'0,0'`
 - roundFunction default is `Math.round`
 
-#### numeral.setOptions
+#### numerify.setOptions
 
 this default options is:
 
@@ -97,10 +97,15 @@ numerify.setOptions({
     tr: 'T'
   }
 })
-numeral(0).format('0.0') // N/A
+numerify(0, '0.0') // N/A
 ```
 
-#### numeral.register
+#### numerify.reset
+
+`numerify.setOptions` will change global settings and you can
+use this function to reset options.
+
+#### numerify.register
 
 Adding your own custom formats is as easy as adding a locale.
 
