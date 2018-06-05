@@ -5,9 +5,10 @@
 ![language](https://img.shields.io/badge/language-javascript-yellow.svg)
 ![License](https://img.shields.io/badge/license-MIT-000000.svg)
 
-A tool for format number more convient, from a fucking cool project named [numeral](http://numeraljs.com/) , and smaller than it.
-
 [docs](http://daxigua.me/numerify/) | [demo](http://jsfiddle.net/vue_echarts/fywjmdvL/)
+
+This is a formatted value tool that makes formatting easier and more
+convenient to extend.
 
 ## Install
 
@@ -136,6 +137,10 @@ numerify.register('percentage', {
   }
 })
 ```
+
+## Difference with numeral
+
+The numeral is a very useful tool, and numerify draws on this thinking. The difference is that numerify focuses on the parts that format values without parsing values, is smaller (12k vs 3k), and performs better.
 
 ## License
 
