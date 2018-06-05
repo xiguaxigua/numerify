@@ -7,6 +7,8 @@
 
 A tool for format number more convient, from a fucking cool project named [numeral](http://numeraljs.com/) , and smaller than it.
 
+[docs](http://daxigua.me/numerify/) | [demo](http://jsfiddle.net/vue_echarts/fywjmdvL/)
+
 ## Install
 
 `npm i numerify -S`
