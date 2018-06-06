@@ -157,7 +157,7 @@ numerify.register('bytes', numerifyBytes)
 
 plugins types and usage are as follows:
 
-### bps
+#### bps
 
 | Number | Format | String |
 | --: | --: | --: |
