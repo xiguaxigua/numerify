@@ -138,6 +138,82 @@ numerify.register('percentage', {
 })
 ```
 
+#### numerify.unregister
+
+remove formatter which has been registed.
+
+```js
+numerify.register('percentage')
+```
+
+## Plugins
+
+plugins are packaged into `lib/plugins` folder, and you can use it such as:
+
+```js
+import numerifyBytes from 'numerify/lib/plugins/bytes.umd.js'
+numerify.register('bytes', numerifyBytes)
+```
+
+plugins types and usage are as follows:
+
+### bps
+
+| Number | Format | String |
+| --: | --: | --: |
+| 0 | '0 BPS' | '0 BPS' |
+| 0.0001 | '0 BPS' | '1 BPS' |
+| .0056 | '0 BPS' | '56 BPS' |
+| .25 | '0BPS' | '2500BPS' |
+| .000001 | '0.00 BPS' | '0.01 BPS' |
+
+
+#### bytes
+
+| Number | Format | String |
+| --: | --: | --: |
+| 100 | '0b' | 100B |
+| 1024 | '0b' | 1KB |
+| 2048 | '0 ib' | 2 KiB |
+| 3072 | '0.0 b' | 3.1 KB |
+| 7884486213 | '0.00b' | 7.88GB |
+| 3467479682787 | '0.000 ib' | 3.154 TiB |
+
+#### currency
+
+| Number | Format | String |
+| --: | --: | --: |
+| 1000.234 | '$0,0.00' | $1,000.23 |
+| 1000.2 | '0,0[.]00 $' | 1,000.20 $ |
+| 1001 | '$ 0,0[.]00' | $ 1,001 |
+| -1000.234 | '($0,0)' | ($1,000) |
+| -1000.234 | '$0.00' | -$1000.23 |
+| 1230974 | '($ 0.00 a)' | $ 1.23 m |
+
+#### exponential
+
+| Number | Format | String |
+| --: | --: | --: |
+| 1123456789 | '0,0e+0' | 1e+9 |
+| 12398734.202 | '0.00e+0' | 1.24e+7 |
+| 0.000123987 | '0.000e+0' | 1.240e-4 |
+
+#### ordinal
+
+| Number | Format | String |
+| --: | --: | --: |
+| 1 | '0o' | 1st |
+| 1 | '0 o' | 1 st |
+| 100 | '0o' | 100th |
+
+#### time
+
+| Number | Format | String |
+| --: | --: | --: |
+| 25 | '00:00:00' | 0:00:25 |
+| 238 | '00:00:00' | 0:03:58 |
+| 63846 | '00:00:00' | 17:44:06 |
+
 ## Difference with numeral
 
 The numeral is a very useful tool, and numerify draws on this thinking. The difference is that numerify focuses on the parts that format values without parsing values, is smaller (12k vs 3k), and performs better.
