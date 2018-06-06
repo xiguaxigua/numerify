@@ -143,7 +143,7 @@ numerify.register('percentage', {
 remove formatter which has been registed.
 
 ```js
-numerify.register('percentage')
+numerify.unregister('percentage')
 ```
 
 ## Plugins
