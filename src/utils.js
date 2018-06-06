@@ -146,3 +146,20 @@ export function numberToFormat (options, value, format, roundingFunction) {
 export function extend (target, sub) {
   Object.keys(sub).forEach(key => { target[key] = sub[key] })
 }
+
+export function ordinal (number) {
+  const b = number % 10
+  return (~~(number % 100 / 10) === 1)
+    ? 'th'
+    : (b === 1)
+      ? 'st'
+      : (b === 2)
+        ? 'nd'
+        : (b === 3)
+          ? 'rd'
+          : 'th'
+}
+
+export function insert (string, subString, start) {
+  return string.slice(0, start) + subString + string.slice(start)
+}

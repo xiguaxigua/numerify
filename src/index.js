@@ -1,5 +1,6 @@
 import { numIsNaN, numberToFormat, extend } from './utils'
 import { DEFAULT_OPTIONS } from './constants'
+import numeralPercent from './plugins/percent'
 
 const options = {}
 const formats = {}
@@ -7,27 +8,24 @@ const formats = {}
 extend(options, DEFAULT_OPTIONS)
 
 function format (value, formatType, roundingFunction) {
-  let format = formatType || options.defaultFormat
+  formatType = formatType || options.defaultFormat
+  roundingFunction = roundingFunction || Math.round
   let output
   let formatFunction
 
-  // make sure we have a roundingFunction
-  roundingFunction = roundingFunction || Math.round
-
-  // format based on value
   if (value === 0 && options.zeroFormat !== null) {
     output = options.zeroFormat
   } else if (value === null && options.nullFormat !== null) {
     output = options.nullFormat
   } else {
     for (let kind in formats) {
-      if (format.match(formats[kind].regexps.format)) {
+      if (formats[kind] && formatType.match(formats[kind].regexps.format)) {
         formatFunction = formats[kind].format
         break
       }
     }
     formatFunction = formatFunction || numberToFormat.bind(null, options)
-    output = formatFunction(value, format, roundingFunction)
+    output = formatFunction(value, formatType, roundingFunction, numerify)
   }
 
   return output
@@ -58,30 +56,8 @@ export default function numerify (input, formatType, roundingFunction) {
 numerify.options = options
 numerify.numberToFormat = numberToFormat.bind(null, options)
 numerify.register = function (name, format) { formats[name] = format }
+numerify.unregister = function (name) { formats[name] = null }
 numerify.setOptions = function (opts) { extend(options, opts) }
 numerify.reset = function () { extend(options, DEFAULT_OPTIONS) }
 
-numerify.register('percentage', {
-  regexps: { format: /(%)/ },
-  format (value, format, roundingFunction) {
-    const space = ~format.indexOf(' %') ? ' ' : ''
-    let output
-
-    if (numerify.options.scalePercentBy100) value = value * 100
-
-    // check for space before %
-    format = format.replace(/\s?%/, '')
-
-    output = numerify.numberToFormat(value, format, roundingFunction)
-
-    if (~output.indexOf(')')) {
-      output = output.split('')
-      output.splice(-1, 0, space + '%')
-      output = output.join('')
-    } else {
-      output = output + space + '%'
-    }
-
-    return output
-  }
-})
+numerify.register('percentage', numeralPercent)

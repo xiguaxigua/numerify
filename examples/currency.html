@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Numerify</title>
+</head>
+<body>
+  <script src="../dist/index.js"></script>
+  <script src="../dist/plugins/currency.js"></script>
+  <script>
+    numerify.register('currency', numerifyCurrency)
+    console.log(numerify(0,'$0.00'))
+    console.log(numerify(null,'$0.00'))
+    console.log(numerify(0.99,'$0,0.00'))
+    console.log(numerify(1000.234,'$0,0.00'))
+    console.log(numerify(1001,'$ 0,0.[00]'))
+    console.log(numerify(1230974,'($0.00 a)'))
+    console.log(numerify(-1000.234,'$ (0,0)'))
+    console.log(numerify(-1000.234,'$(0,0)'))
+    console.log(numerify(-1000.234,'$ (0,0.00)'))
+    console.log(numerify(-1000.234,'$(0,0.00)'))
+    console.log(numerify(-1000.238,'$(0,0.00)'))
+    console.log(numerify(-1000.234,'$-0,0'))
+    console.log(numerify(-1000.234,'$ -0,0'))
+    console.log(numerify(1000.234,'$ (0,0)'))
+    console.log(numerify(1000.234,'$(0,0)'))
+    console.log(numerify(1000.234,'$ (0,0.00)'))
+    console.log(numerify(1000.234,'$(0,0.00)'))
+    console.log(numerify(1000.238,'$(0,0.00)'))
+    console.log(numerify(1000.234,'$-0,0'))
+    console.log(numerify(1000.234,'$ -0,0'))
+  </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Numerify</title>
+</head>
+<body>
+  <script src="../dist/index.js"></script>
+  <script src="../dist/plugins/bps.js"></script>
+  <script>
+    numerify.register('bps', numerifyBps)
+    console.log(numerify(0,'0 BPS'))
+    console.log(numerify(0.0001, '0 BPS'))
+    console.log(numerify(.0056, '0 BPS'))
+    console.log(numerify(.25, '0BPS'))
+    console.log(numerify(.000001, '0.00 BPS'))
+  </script>
+</body>
+</html>

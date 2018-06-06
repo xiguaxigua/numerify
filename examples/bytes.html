@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Numerify</title>
+</head>
+<body>
+  <script src="../dist/index.js"></script>
+  <script src="../dist/plugins/bytes.js"></script>
+  <script>
+    var decimal = 1000;
+    var binary = 1024;
+    numerify.register('bytes', numerifyBytes)
+    console.log(numerify(0,'0 BPS'))
+    console.log(numerify(0,'0b'))
+    console.log(numerify(null,'0 b'))
+    console.log(numerify(100,'0b'))
+    console.log(numerify(binary * 2,'0 ib'))
+    console.log(numerify(Math.pow(binary, 2) * 5,'0ib'))
+    console.log(numerify(Math.pow(binary, 3) * 7.343,'0.[0] ib'))
+    console.log(numerify(Math.pow(binary, 4) * 3.1536544,'0.000ib'))
+    console.log(numerify(Math.pow(binary, 5) * 2.953454534534,'0ib'))
+    console.log(numerify(decimal * 2,'0 b'))
+    console.log(numerify(Math.pow(decimal, 2) * 5,'0b'))
+    console.log(numerify(Math.pow(decimal, 3) * 7.343,'0.[0] b'))
+    console.log(numerify(Math.pow(decimal, 4) * 3.1536544,'0.000b'))
+    console.log(numerify(Math.pow(decimal, 5) * 2.953454534534,'0b'))
+  </script>
+</body>
+</html>

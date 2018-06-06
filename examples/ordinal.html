@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Numerify</title>
+</head>
+<body>
+  <script src="../dist/index.js"></script>
+  <script src="../dist/plugins/ordinal.js"></script>
+  <script>
+    numerify.register('ordinal', numerifyOrdinal)
+    console.log(numerify(1,'0o'))
+    console.log(numerify(52,'0 o'))
+    console.log(numerify(23,'0o'))
+    console.log(numerify(100,'0o'))
+    console.log(numerify(1234,'0,0o'))
+  </script>
+</body>
+</html>

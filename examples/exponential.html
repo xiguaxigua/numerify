@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Numerify</title>
+</head>
+<body>
+  <script src="../dist/index.js"></script>
+  <script src="../dist/plugins/exponential.js"></script>
+  <script>
+    numerify.register('exponential', numerifyExponential)
+    console.log(numerify(0,'0e+0'))
+    console.log(numerify(null,'0e+0'))
+    console.log(numerify(1,'0e+0'))
+    console.log(numerify(77.1234,'0.0e+0'))
+    console.log(numerify(0.000000771234,'0.0e-0'))
+    console.log(numerify(-0.000000771234,'0.00e-0'))
+    console.log(numerify(77.1234,'0.000e+0'))
+    console.log(numerify(-1000830298,'0.0[000]e+0'))
+  </script>
+</body>
+</html>
