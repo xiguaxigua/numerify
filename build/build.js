@@ -6,6 +6,7 @@ const eslint = require('rollup-plugin-eslint')
 const minify = require('uglify-es').minify
 const resolve = require('rollup-plugin-node-resolve')
 const common = require('rollup-plugin-commonjs')
+const pluginList = require('../src/plugin-list')
 
 for (let i = 0; i < 2; i++) {
   const plugins = [
@@ -33,5 +34,28 @@ for (let i = 0; i < 2; i++) {
   }).catch(e => {
     console.log(e)
     process.exit(1)
+  })
+
+  Object.keys(pluginList).forEach(key => {
+    const { src, dist } = pluginList[key]
+    rollup.rollup({
+      input: src,
+      plugins
+    }).then(bundle => {
+      for (let j = 0; j < 3; j++) {
+        const type = formatList[j]
+        bundle.write({
+          format: type,
+          name: `numerify${key}`,
+          file: `${dist}.${type}${i ? '.min' : ''}.js`
+        }).catch(e => {
+          console.log(e)
+          process.exit(1)
+        })
+      }
+    }).catch(e => {
+      console.log(e)
+      process.exit(1)
+    })
   })
 }

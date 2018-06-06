@@ -4,7 +4,7 @@
   "description": "number formatter",
   "main": "lib/index.umd.js",
   "scripts": {
-    "dev": "rollup -wc build/watch.js",
+    "dev": "node build/watch.js",
     "build": "rm -f -r lib && node build/build.js",
     "prepublishOnly": "npm run build",
     "test": "karma start "
@@ -44,6 +44,7 @@
     "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-uglify": "^4.0.0",
-    "uglify-es": "^3.3.9"
+    "uglify-es": "^3.3.9",
+    "watch": "^1.0.2"
   }
 }
