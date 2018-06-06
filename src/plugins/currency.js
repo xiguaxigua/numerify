@@ -10,7 +10,6 @@ export default {
     let symbol
     formatType = formatType.replace(/\s?\$\s?/, '')
     let output = numerify.numberToFormat(value, formatType, roundingFunction)
-
     if (value >= 0) {
       symbols.before = symbols.before.replace(/[-(]/, '')
       symbols.after = symbols.after.replace(/[-)]/, '')
@@ -18,7 +17,6 @@ export default {
       (!~symbols.before.indexOf('-') && !~symbols.before.indexOf('('))) {
       symbols.before = '-' + symbols.before
     }
-
     for (let i = 0; i < symbols.before.length; i++) {
       symbol = symbols.before[i]
 
@@ -27,7 +25,7 @@ export default {
           output = insert(output, '$', i)
           break
         case ' ':
-          output = insert(output, ' ')
+          output = insert(output, ' ', i)
           break
       }
     }
