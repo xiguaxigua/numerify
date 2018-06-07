@@ -1,6 +1,6 @@
 import { numIsNaN, numberToFormat, extend } from './utils'
 import { DEFAULT_OPTIONS } from './constants'
-import numeralPercent from './plugins/percent'
+import numerifyPercent from './plugins/percent'
 
 const options = {}
 const formats = {}
@@ -60,4 +60,4 @@ numerify.unregister = function (name) { formats[name] = null }
 numerify.setOptions = function (opts) { extend(options, opts) }
 numerify.reset = function () { extend(options, DEFAULT_OPTIONS) }
 
-numerify.register('percentage', numeralPercent)
+numerify.register('percentage', numerifyPercent)
