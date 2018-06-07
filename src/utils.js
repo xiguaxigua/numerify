@@ -13,13 +13,10 @@ export function numIsNaN (value) {
 export function toFixed (value, maxDecimals, roundingFunction, optionals) {
   const splitValue = value.toString().split('.')
   const minDecimals = maxDecimals - (optionals || 0)
-  // Use the smallest precision value possible to avoid errors from
-  // floating point representation
   const boundedPrecision = splitValue.length === 2
     ? Math.min(Math.max(splitValue[1].length, minDecimals), maxDecimals)
     : minDecimals
   const power = Math.pow(10, boundedPrecision)
-  // Multiply up by precision, round accurately, then divide and use native toFixed():
   let output = (roundingFunction(value + 'e+' + boundedPrecision) / power).toFixed(boundedPrecision)
 
   if (optionals > maxDecimals - boundedPrecision) {
@@ -42,9 +39,6 @@ export function numberToFormat (options, value, format, roundingFunction) {
 
   value = value || 0
 
-  // see if we should use parentheses for negative number or
-  // if we should prefix with a sign
-  // if both are present we default to parentheses
   if (~format.indexOf('(')) {
     negP = true
     format = format.replace(/[(|)]/g, '')
@@ -54,13 +48,11 @@ export function numberToFormat (options, value, format, roundingFunction) {
       : value < 0 ? format.indexOf('-') : -1
     format = format.replace(/[+|-]/g, '')
   }
-  // see if abbreviation is wanted
   if (~format.indexOf('a')) {
     abbrForce = format.match(/a(k|m|b|t)?/)
 
     abbrForce = abbrForce ? abbrForce[1] : false
 
-    // check for space before abbreviation
     if (~format.indexOf(' a')) abbr = ' '
     format = format.replace(new RegExp(abbr + 'a[kmbt]?'), '')
 
@@ -78,12 +70,10 @@ export function numberToFormat (options, value, format, roundingFunction) {
       value = value / THOUSAND
     }
   }
-  // check for optional decimals
   if (~format.indexOf('[.]')) {
     optDec = true
     format = format.replace('[.]', '.')
   }
-  // break number and format
   let int = value.toString().split('.')[0]
   let precision = format.split('.')[1]
   let thousands = format.indexOf(',')
@@ -106,12 +96,10 @@ export function numberToFormat (options, value, format, roundingFunction) {
   } else {
     int = toFixed(value, 0, roundingFunction)
   }
-  // check abbreviation again after rounding
   if (abbr && !abbrForce && +int >= 1000 && abbr !== ABBR.trillion) {
     int = '' + (+int / 1000)
     abbr = ABBR.million
   }
-  // format number
   if (~int.indexOf('-')) {
     int = int.slice(1)
     neg = true

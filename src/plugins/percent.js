@@ -8,7 +8,7 @@ export default {
 
     formatType = formatType.replace(/\s?%/, '')
 
-    output = numerify.numberToFormat(value, formatType, roundingFunction)
+    output = numerify._numberToFormat(value, formatType, roundingFunction)
 
     if (~output.indexOf(')')) {
       output = output.split('')

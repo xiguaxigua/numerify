@@ -123,7 +123,7 @@ numerify.register('percentage', {
 
     format = format.replace(/\s?%/, '')
 
-    output = numerify.numberToFormat(value, format, roundingFunction)
+    output = numerify._numberToFormat(value, format, roundingFunction)
 
     if (~output.indexOf(')')) {
       output = output.split('')
@@ -145,6 +145,11 @@ remove formatter which has been registed.
 ```js
 numerify.unregister('percentage')
 ```
+
+#### numerify._numberToFormat
+
+use to format `()` / ` /` / `+-` / `kmbt` / `.` / `[]`,
+always used in format plugins.
 
 ## Plugins
 

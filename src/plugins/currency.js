@@ -9,7 +9,7 @@ export default {
     }
     let symbol
     formatType = formatType.replace(/\s?\$\s?/, '')
-    let output = numerify.numberToFormat(value, formatType, roundingFunction)
+    let output = numerify._numberToFormat(value, formatType, roundingFunction)
     if (value >= 0) {
       symbols.before = symbols.before.replace(/[-(]/, '')
       symbols.after = symbols.after.replace(/[-)]/, '')

@@ -54,7 +54,7 @@ export default function numerify (input, formatType, roundingFunction) {
 }
 
 numerify.options = options
-numerify.numberToFormat = numberToFormat.bind(null, options)
+numerify._numberToFormat = numberToFormat.bind(null, options)
 numerify.register = function (name, format) { formats[name] = format }
 numerify.unregister = function (name) { formats[name] = null }
 numerify.setOptions = function (opts) { extend(options, opts) }

@@ -22,7 +22,7 @@ export default {
       }
     }
 
-    output = numerify.numberToFormat(value, formatType, roundingFunction)
+    output = numerify._numberToFormat(value, formatType, roundingFunction)
 
     return output + suffix
   }

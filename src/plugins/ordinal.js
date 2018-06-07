@@ -8,7 +8,7 @@ export default {
 
     ordinalStr += ordinal(value)
 
-    let output = numerify.numberToFormat(value, formatType, roundingFunction)
+    let output = numerify._numberToFormat(value, formatType, roundingFunction)
 
     return output + ordinalStr
   }
