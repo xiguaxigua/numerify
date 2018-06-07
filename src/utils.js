@@ -36,6 +36,7 @@ export function numberToFormat (options, value, format, roundingFunction) {
   let neg = false
   let abbrForce
   let signed
+  format = format || ''
 
   value = value || 0
 

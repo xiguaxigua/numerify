@@ -148,8 +148,11 @@ numerify.unregister('percentage')
 
 #### numerify._numberToFormat
 
-use to format `()` / ` /` / `+-` / `kmbt` / `.` / `[]`,
-always used in format plugins.
+This is an internal function, used to format `()` , ` ,` , `+-` , `kmbt` , `.` and `[]`.
+
+```js
+numerify._numberToFormat(<value>, <format>, [roundingFunction])
+```
 
 ## Plugins
 
