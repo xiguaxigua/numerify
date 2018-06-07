@@ -1,7 +1,7 @@
 import { DECIMAL, BINARY } from '../constants'
 
 export default {
-  regexps: { format: /([0\s]i?b)/ },
+  regexp: /[0\s]i?b/,
   format (value, formatType, roundingFunction, numerify) {
     let output
     const bytes = ~formatType.indexOf('ib') ? BINARY : DECIMAL

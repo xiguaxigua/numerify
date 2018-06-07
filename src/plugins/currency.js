@@ -1,7 +1,7 @@
 import { insert } from '../utils'
 
 export default {
-  regexps: { format: /(\$)/ },
+  regexp: /\$/,
   format (value, formatType, roundingFunction, numerify) {
     const symbols = {
       before: formatType.match(/^([+|\-|(|\s|$]*)/)[0],

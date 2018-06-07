@@ -1,5 +1,5 @@
 export default {
-  regexps: { format: /(%)/ },
+  regexp: /%/,
   format (value, formatType, roundingFunction, numerify) {
     const space = ~formatType.indexOf(' %') ? ' ' : ''
     let output

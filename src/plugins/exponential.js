@@ -1,7 +1,7 @@
 import { numIsNaN } from '../utils'
 
 export default {
-  regexps: { format: /(e\+|e-)/ },
+  regexp: /(e\+|e-)/,
   format (value, formatType, roundingFunction, numerify) {
     const exponential = typeof value === 'number' && !numIsNaN(value)
       ? value.toExponential()

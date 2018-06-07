@@ -1,5 +1,5 @@
 export default {
-  regexps: { format: /(BPS)/ },
+  regexp: /BPS/,
   format (value, formatType, roundingFunction, numerify) {
     const space = ~formatType.indexOf(' BPS') ? ' ' : ''
     value = value * 10000

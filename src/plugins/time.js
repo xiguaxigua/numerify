@@ -1,5 +1,5 @@
 export default {
-  regexps: { format: /(:)/ },
+  regexp: /:/,
   format (value, formatType, roundingFunction) {
     const hours = Math.floor(value / 60 / 60)
     const minutes = Math.floor((value - (hours * 60 * 60)) / 60)

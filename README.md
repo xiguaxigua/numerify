@@ -114,7 +114,7 @@ Adding your own custom formats is as easy as adding a locale.
 
 ```js
 numerify.register('percentage', {
-  regexps: { format: /(%)/ },
+  regexp: /%/,
   format (value, format, roundingFunction) {
     const space = ~format.indexOf(' %') ? ' ' : ''
     let output

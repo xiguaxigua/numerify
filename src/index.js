@@ -19,7 +19,7 @@ function format (value, formatType, roundingFunction) {
     output = options.nullFormat
   } else {
     for (let kind in formats) {
-      if (formats[kind] && formatType.match(formats[kind].regexps.format)) {
+      if (formats[kind] && formatType.match(formats[kind].regexp)) {
         formatFunction = formats[kind].format
         break
       }
