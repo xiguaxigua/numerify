@@ -9,49 +9,49 @@
 <body>
   <script src="../dist/index.js"></script>
   <script>
-    numerify.setOptions({
-      zeroFormat: 'zero',
-      nullFormat: 'N/A',
-      defaultFormat: '0,0',
-      scalePercentBy100: true,
-      abbrLabel: {
-        th: 'k',
-        mi: 'm',
-        bi: 'B',
-        tr: 'T'
-      }
-    })
-    numerify.register('percentage', {
-      regexp: /%/,
-      format (value, format, roundingFunction) {
-        const space = ~format.indexOf(' %') ? ' ' : ''
-        let output
+    // numerify.setOptions({
+    //   zeroFormat: 'zero',
+    //   nullFormat: 'N/A',
+    //   defaultFormat: '0,0',
+    //   scalePercentBy100: true,
+    //   abbrLabel: {
+    //     th: 'k',
+    //     mi: 'm',
+    //     bi: 'B',
+    //     tr: 'T'
+    //   }
+    // })
+    // numerify.register('percentage', {
+    //   regexp: /%/,
+    //   format (value, format, roundingFunction) {
+    //     const space = ~format.indexOf(' %') ? ' ' : ''
+    //     let output
 
-        if (numerify.options.scalePercentBy100) value = value * 100
+    //     if (numerify.options.scalePercentBy100) value = value * 100
 
-        format = format.replace(/\s?%/, '')
+    //     format = format.replace(/\s?%/, '')
 
-        output = numerify.numberToFormat(value, format, roundingFunction)
+    //     output = numerify._numberToFormat(value, format, roundingFunction)
 
-        if (~output.indexOf(')')) {
-          output = output.split('')
-          output.splice(-1, 0, space + '%')
-          output = output.join('')
-        } else {
-          output = output + space + '%'
-        }
+    //     if (~output.indexOf(')')) {
+    //       output = output.split('')
+    //       output.splice(-1, 0, space + '%')
+    //       output = output.join('')
+    //     } else {
+    //       output = output + space + '%'
+    //     }
 
-        return output
-      }
-    })
-    numerify.reset()
-    console.log(numerify(0.0111, '0,0.0[0]%'))
-    console.log(numerify(1213123, '0,0.00ak'))
-    console.log(numerify(123123123100, '0.0[0]a'))
-    console.log(numerify(1231.23, '0,0.0'))
-    console.log(numerify(1231.23, '0,0.0[0]'))
-    console.log(numerify(1231.2, '0,0.0[0]'))
-    console.log(numerify(null, '0,0.0[0]'))
+    //     return output
+    //   }
+    // })
+    // numerify.reset()
+    console.log(numerify('1231.23', '0,0.0[0]'))
+    // console.log(numerify(0.0111, '0,0.0[0]%'))
+    // console.log(numerify(1213123, '0,0.00ak'))
+    // console.log(numerify(123123123100, '0.0[0]a'))
+    // console.log(numerify(1231.23, '0,0.0'))
+    // console.log(numerify(1231.2, '0,0.0[0]'))
+    // console.log(numerify(null, '0,0.0[0]'))
   </script>
 </body>
 </html>

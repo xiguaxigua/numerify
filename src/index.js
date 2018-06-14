@@ -33,7 +33,7 @@ function format (value, formatType, roundingFunction) {
 
 export default function numerify (input, formatType, roundingFunction) {
   let value
-
+  
   if (input === 0 || typeof input === 'undefined') {
     value = 0
   } else if (input === null || numIsNaN(input)) {
@@ -45,6 +45,8 @@ export default function numerify (input, formatType, roundingFunction) {
       input === options.nullFormat ||
       !input.replace(/[^0-9]+/g, '').length) {
       value = null
+    } else {
+      value = +input
     }
   } else {
     value = +input || null
