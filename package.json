@@ -1,6 +1,6 @@
 {
   "name": "numerify",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "number formatter",
   "main": "lib/index.es.js",
   "scripts": {
