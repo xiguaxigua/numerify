@@ -2,7 +2,7 @@
   "name": "numerify",
   "version": "1.2.8",
   "description": "number formatter",
-  "main": "lib/index.umd.js",
+  "main": "lib/index.es.js",
   "scripts": {
     "dev": "node build/watch.js",
     "build": "rm -f -r lib && node build/build.js",
