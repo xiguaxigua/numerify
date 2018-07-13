@@ -6,14 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="number formatter">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuep/dist/vuep.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuep/dist/vuep.css">
   <style>
     .vuep {
-      height: auto !important;
+      flex-direction: row-reverse;
     }
-    .vuep-editor {
-      display: none;
+    .numerify-playground p {
+      font-size: 18px;
+      margin: 0;
+      line-height: 30px;
+    }
+    .numerify-playground input {
+      outline: 0;
+    }
+    .numerify-playground span {
+      display: inline-block;
+      width: 70px;
+      color: #aaa;
     }
   </style>
 </head>

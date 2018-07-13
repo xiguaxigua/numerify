@@ -1,11 +1,4 @@
-![download](https://img.shields.io/npm/dm/numerify.svg)
-![version](https://img.shields.io/npm/v/numerify.svg)
-![Travis](https://img.shields.io/travis/xiguaxigua/numerify.svg)
-![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/numerify.svg)
-![language](https://img.shields.io/badge/language-javascript-yellow.svg)
-![License](https://img.shields.io/badge/license-MIT-000000.svg)
-
-[docs](http://daxigua.me/numerify/) | [demo](http://jsfiddle.net/vue_echarts/fywjmdvL/)
+# numerify
 
 This is a formatted value tool that makes formatting easier and more
 convenient to extend.
@@ -15,10 +8,10 @@ convenient to extend.
 <vuep template="#numerify-playground"></vuep>
 <script v-pre type="text/x-template" id="numerify-playground">
 <template>
-  <div>
-    <p>数值: <input v-model="num"/></p>
-    <p>格式: <input v-model="format"></p>
-    <p>结果: {{ result }}</p>
+  <div class="numerify-playground">
+    <p><span class="label">number: </span><input v-model="num"/></p>
+    <p><span class="label">format: </span><input v-model="format"></p>
+    <p><span class="label">result: </span>{{ result }}</p>
   </div>
 </template>
 
@@ -247,9 +240,9 @@ plugins types and usage are as follows:
 
 | Number | Format | String |
 | --: | --: | --: |
-| 25 | '00:00:00' | 0:00:25 |
-| 238 | '00:00:00' | 0:03:58 |
-| 63846 | '00:00:00' | 17:44:06 |
+| 25 | `00:00:00` | `0:00:25` |
+| 238 | `00:00:00` | `0:03:58` |
+| 63846 | `00:00:00` | `17:44:06` |
 
 ## Difference with numeral
 

@@ -7,7 +7,6 @@
     "dev": "node build/watch.js",
     "build": "rm -f -r lib && node build/build.js",
     "prepublishOnly": "npm run build",
-    "deploy": "gh-pages -d docs",
     "test": "karma start "
   },
   "repository": {
@@ -34,7 +33,6 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
-    "gh-pages": "^1.2.0",
     "jasmine-core": "^3.1.0",
     "karma": "^2.0.2",
     "karma-jasmine": "^1.1.2",
