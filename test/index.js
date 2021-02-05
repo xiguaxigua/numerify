@@ -41,6 +41,24 @@ describe('Thousandth place', function() {
   it("0.23 + '0.0[0000]' = '0.23'", function() {
     expect(numerify(0.23, '0.0[0000]')).toBe('0.23')
   });
+  it("0.00000000023 + '0.00000' = '0.00000'", function() {
+    expect(numerify(0.00000000023, '0.00000')).toBe('0.00000')
+  });
+  it("0.00000000023 + '0.0[0000]' = '0.0'", function() {
+    expect(numerify(0.00000000023, '0.0[0000]')).toBe('0.0')
+  });
+  it("0.23E-10 + '0.00000' = '0.00000'", function() {
+    expect(numerify(0.23E-10, '0.00000')).toBe('0.00000')
+  });
+  it("0.23E-10 + '0.000000000000' = '0.000000000023'", function() {
+    expect(numerify(0.23E-10, '0.000000000023')).toBe('0.000000000023')
+  });
+  it("0.23E30 + '0.0' = '2.3e29'", function() {
+    expect(numerify(0.23E30, '0.0')).toBe('2.3e+29')
+  });
+  it("0.23e30 + '0.0' = '2.3e29'", function() {
+    expect(numerify(0.23e30, '0.0')).toBe('2.3e+29')
+  });
 });
 
 describe('Percent sign', function() {
