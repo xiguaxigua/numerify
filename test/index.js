@@ -59,6 +59,9 @@ describe('Thousandth place', function() {
   it("0.23e30 + '0.0' = '2.3e29'", function() {
     expect(numerify(0.23e30, '0.0')).toBe('2.3e+29')
   });
+  it("1.2777218432114642E-12 + '0.0' = '0.0'", function() {
+    expect(numerify(1.2777218432114642E-12, '0.0')).toBe('0.0')
+  });
 });
 
 describe('Percent sign', function() {
