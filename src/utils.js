@@ -17,7 +17,7 @@ export function toFixed (value, maxDecimals, roundingFunction, optionals) {
     ? Math.min(Math.max(splitValue[1].length, minDecimals), maxDecimals)
     : minDecimals
   const power = Math.pow(10, boundedPrecision)
-  let output = (roundingFunction(value + 'e+' + boundedPrecision) / power).toFixed(boundedPrecision)
+  let output = (roundingFunction(value * power) / power).toFixed(boundedPrecision)
 
   if (optionals > maxDecimals - boundedPrecision) {
     let optionalsRegExp = new RegExp('\\.?0{1,' + (optionals - (maxDecimals - boundedPrecision)) + '}$')
